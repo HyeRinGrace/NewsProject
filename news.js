@@ -10,7 +10,7 @@ const groupSize = 5; // 페이지 네이션을 몇개 출력할건지 고정값
 menus.forEach((menu) => menu.addEventListener("click",(event)=>{getNewsCategory(event)}));
 let url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
 
-
+//News API 세팅
 const getNews = async() =>{
     try{
         //*주의 사항 URL에 붙인 다음에 URL을 호출해야하기 때문에, 호출코드 앞에 선언해준다.
@@ -119,6 +119,8 @@ const pageNationRender = () => {
     document.querySelector('.pagination').innerHTML = paginationHTML;
 } 
 
+
+//파라미터로 받은 값을 이동시켜주는 함수
 const moveToPage = (pageNumber) => {
     page = pageNumber;
     getNews();
